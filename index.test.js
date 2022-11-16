@@ -10,7 +10,7 @@ test("test parse action.yaml file", () => {
 
   const result = cp.execSync(`node ${ip}`, { env: process.env }).toString();
 
-  // expect(result).toContain("set-output");
+  expect(result).toContain("set-output");
   expect(result).toContain("runs.using");
   expect(result).toContain("node16");
   expect(result).toContain("description");
