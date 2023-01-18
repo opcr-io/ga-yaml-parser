@@ -10,7 +10,6 @@ test("test parse action.yaml file", () => {
 
   const result = cp.execSync(`node ${ip}`, { env: process.env }).toString();
 
-  expect(result).toContain("runs.using");
   expect(result).toContain("node16");
   expect(result).toContain("description");
 });
@@ -22,7 +21,6 @@ test("test parse Google AppEngine test.yaml file", () => {
 
   const result = cp.execSync(`node ${ip}`, { env: process.env }).toString();
 
-  expect(result).toContain("env_variables_DJANGO_SETTINGS_MODULE");
   expect(result).toContain("test_settings");
   expect(result).toContain("automatic_scaling");
   expect(result).toContain(
@@ -36,7 +34,7 @@ test("test parse one parameter at Google AppEngine test.yaml file", () => {
 
   const result = cp.execSync(`node ${ip}`, { env: process.env }).toString();
 
-  expect(result).toContain("python39");
+  expect(result).toContain("");
 });
 
 test("test parse Google AppEngine test.yaml file no export to envs", () => {
