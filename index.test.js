@@ -9,7 +9,7 @@ test("test parse action.yaml file", () => {
   process.env["INPUT_RETURN_TO_OUTPUTS"] = "true";
 
   const result = cp.execSync(`node ${ip}`, { env: process.env }).toString();
-
+  console.log(result);
   expect(result).toContain("node16");
   expect(result).toContain("description");
 });
@@ -20,6 +20,7 @@ test("test parse Google AppEngine test.yaml file", () => {
   process.env["INPUT_EXPORT_TO_ENVS"] = "true";
 
   const result = cp.execSync(`node ${ip}`, { env: process.env }).toString();
+  console.log(result);
 
   expect(result).toContain("test_settings");
   expect(result).toContain("automatic_scaling");
@@ -33,6 +34,7 @@ test("test parse one parameter at Google AppEngine test.yaml file", () => {
   process.env["INPUT_KEY"] = "runtime";
 
   const result = cp.execSync(`node ${ip}`, { env: process.env }).toString();
+  console.log(result);
 
   expect(result).toContain("");
 });
@@ -43,6 +45,7 @@ test("test parse Google AppEngine test.yaml file no export to envs", () => {
   process.env["INPUT_EXPORT_TO_ENVS"] = "false";
 
   const result = cp.execSync(`node ${ip}`, { env: process.env }).toString();
+  console.log(result);
 
   expect(result).not.toContain("env_variables_DJANGO_SETTINGS_MODULE");
 });
